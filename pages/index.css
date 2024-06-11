@@ -3,16 +3,9 @@
   max-width: 1600px;
   flex: auto;
   justify-content: center;
-  margin-right: ;
-  margin-left: ;
+  margin-right: auto;
+  margin-left: auto;
   font-family: Inter, Arial, sans-serif;
   font-size: 16px;
   line-height: 20px;
-}
-
-.header {
-}
-.content {
-}
-.footer {
 }
