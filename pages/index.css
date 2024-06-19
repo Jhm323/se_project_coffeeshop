@@ -9,3 +9,185 @@
   font-size: 16px;
   line-height: 20px;
 }
+
+.header {
+  padding: 30px 80px 40px;
+  min-height: 720px;
+  max-height: 800px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../images/background_header.svg);
+  background-repeat: no-repeat;
+  margin-left: 150px;
+  z-index: 0;
+  background-color: #ffffff;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__logo {
+  position: relative;
+  left: -50px;
+  width: 105px;
+  height: 30px;
+}
+.nav__links {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  gap: 20px;
+  list-style-type: none;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 20px;
+}
+
+.nav__link {
+  color: #000;
+  text-decoration: none;
+}
+
+.header__title {
+  max-height: 729px;
+  font-size: 60px;
+  line-height: 70px;
+  margin: 183px 0 0;
+  letter-spacing: -0.6px;
+  font-weight: 500;
+  color: #000;
+}
+
+.header__description {
+  max-width: 683px;
+  font-size: 20px;
+  line-height: 30px;
+  margin: 28px 0 0;
+  color: #000;
+}
+
+.header__span-accent {
+  display: block;
+  font-family: "Noto Serif";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 72px;
+  color: #2f80ed;
+}
+
+.header__span {
+  font-family: "Inter";
+  font-weight: 500;
+  flex: 60px;
+  line-height: 72px;
+  letter-spacing: -0.6px;
+  z-index: 1;
+}
+
+.header__description {
+  font-family: "noto-serif";
+  font-size: 20px;
+  line-height: 30px;
+  z-index: 1;
+  color: #000;
+}
+
+.header__image {
+  background-image: url(../images/inside_coffee_shop.png);
+  position: absolute;
+  height: 548px;
+  width: 646px;
+  margin: 124px 5px 0px 700px;
+  display: flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  z-index: 0;
+}
+
+.header__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  margin: 0px 80px 40px 80px;
+}
+
+.header__paragraph {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #838383;
+}
+
+.recipes {
+  padding: 100px 80px 215px;
+  background-image: url(../images/background_recipes.svg);
+  background-color: #0a2750;
+  justify-content: center;
+  background-size: cover;
+}
+
+.recipes__title {
+  min-width: 580px;
+  padding-top: 100px;
+  padding-right: 20px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 52px;
+  margin: 0;
+}
+
+.recipes__subtitle {
+  padding-top: 24px;
+  padding-bottom: 80px;
+  padding-right: 20px;
+  max-width: 438px;
+  color: #ffffff;
+  display: block;
+  margin-right: auto;
+  font-family: "Noto Serif";
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0;
+}
+
+.recipes__subtitle-span {
+  display: block;
+  font-family: "Noto Serif";
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.recipes__videos {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  justify-content: center;
+  margin: 0;
+}
+
+.recipes__iframe {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 480px;
+  height: 273px;
+  margin: 0;
+}
+
+.recipes__video-caption {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  padding-bottom: 16px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0;
+}
