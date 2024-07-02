@@ -58,7 +58,7 @@
   margin: 183px 0 0;
   letter-spacing: -0.6px;
   font-weight: 500;
-  font-style: 60px;
+  font-size: 60px;
   color: #000;
   z-index: 1;
 }
@@ -232,7 +232,7 @@
 .form__label {
   margin-bottom: 8px;
   font-family: inter;
-  font-size: normal;
+  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -266,7 +266,6 @@
 
 .form__button {
   border-radius: 4px;
-  opacity: ;
   height: 60px;
   width: 385px;
   margin: 0 0 32px;
