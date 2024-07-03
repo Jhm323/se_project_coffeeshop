@@ -209,7 +209,7 @@
   text-align: center;
 }
 
-.reservation__form {
+.reservation__form form {
   margin: 0 auto;
   margin-bottom: 120px;
   max-width: 385px;
