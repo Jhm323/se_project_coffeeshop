@@ -7,7 +7,7 @@
   position: relative;
   left: -50px;
   width: 105px;
-  height: 30px;
+  height: 39px;
 }
 
 .nav__link {
@@ -15,9 +15,13 @@
   text-decoration: none;
 }
 
+.nav__link:hover {
+  color: #2f80ed;
+  transition-duration: 2s;
+}
+
 .nav__links {
   display: flex;
-  padding: 30px 80px;
   margin: 0px;
   gap: 20px;
   list-style-type: none;

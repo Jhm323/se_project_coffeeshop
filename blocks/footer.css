@@ -29,7 +29,7 @@
 
 .footer__column-heading {
   margin: 0 0 20px;
-  font-family: "inter";
+  font-family: "inter", Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -41,7 +41,7 @@
 .footer__list-item {
   margin: 0 0 16px;
   box-sizing: border-box;
-  font-family: "inter";
+  font-family: "inter", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -68,7 +68,7 @@
 
 .footer__copyright {
   margin: 108px 0 0;
-  font-family: "inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;

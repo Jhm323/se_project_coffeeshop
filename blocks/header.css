@@ -1,5 +1,5 @@
 .header {
-  padding: 30px 40px 80px;
+  padding: 30px 80px 40px;
   min-height: 720px;
   max-height: 800px;
   height: 100vh;
@@ -10,6 +10,8 @@
   background-position: center;
   background-color: #ffffff;
   position: relative;
+  z-index: 1;
+  box-sizing: border-box;
 }
 
 .header__title {
@@ -34,7 +36,7 @@
 
 .header__span-accent {
   display: block;
-  font-family: "Noto Serif";
+  font-family: "Noto Serif", "Times New Roman", serif;
   font-style: italic;
   font-weight: normal;
   font-size: 60px;
@@ -42,16 +44,8 @@
   color: #2f80ed;
 }
 
-.header__span {
-  font-family: "Inter";
-  font-weight: 500;
-  flex: 60px;
-  line-height: 72px;
-  letter-spacing: -0.6px;
-}
-
 .header__description {
-  font-family: "noto-serif";
+  font-family: "Noto Serif", "Times New Roman", serif;
   font-size: 20px;
   line-height: 30px;
   color: #000;
@@ -60,17 +54,19 @@
 .header__image {
   background-image: url(../images/inside_coffee_shop.png);
   position: absolute;
-  height: 548px;
+  height: 568px;
   width: 646px;
   display: flex;
   top: 124px;
   right: 5px;
+  z-index: -1;
 }
 
 .header__footer {
   display: flex;
   justify-content: space-between;
   margin-top: auto;
+  align-items: end;
 }
 
 .header__paragraph {

@@ -13,7 +13,7 @@
   display: flex;
   justify-content: flex-start;
   margin: 100px 0 0 80px;
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 44px;
@@ -25,11 +25,6 @@
 
 .about__content {
   margin: 119px 80px 173px 0;
-  font-family: "Noto Serif";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 30px;
   color: #fff;
   max-width: 660px;
 }
@@ -37,6 +32,18 @@
 .about__paragraph {
   gap: 20px;
   max-width: 660px;
+  font-family: "Noto Serif", "Times New Roman", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
+.about__paragraph__last-child {
+  margin-bottom: 0;
 }
 
 .about__circle {
