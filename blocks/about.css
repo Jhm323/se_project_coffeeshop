@@ -27,6 +27,8 @@
   margin: 119px 80px 173px 0;
   color: #fff;
   max-width: 660px;
+  display: flex;
+  flex-direction: column;
 }
 
 .about__paragraph {
@@ -37,12 +39,10 @@
   font-weight: normal;
   font-size: 20px;
   line-height: 30px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 20px;
+  margin: 0px 0px 20px 2px;
 }
 
-.about__paragraph__last-child {
+.about__paragraph:last-child {
   margin-bottom: 0;
 }
 
