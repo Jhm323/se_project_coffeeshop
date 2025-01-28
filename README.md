@@ -1,20 +1,24 @@
-# Triple Peaks Coffee Shop
+Triple Peaks Coffee Shop
+This project represents the second milestone in the Software Engineering program at TripleTen. It showcases proficiency in HTML and CSS, aligning with a provided design brief to create an engaging and functional website.
 
-This is the second project of the Software Engineering program at TripleTen. It was created using HTML and CSS, based on the design brief.
+Key Features
+Semantic HTML5: Ensuring accessibility and meaningful structure.
+Flexbox: For responsive and intuitive layouts.
+Positioning: Precise element alignment for a polished design.
+Flat BEM File Structure: Organized and maintainable CSS architecture.
+Custom Form: Interactive form design tailored for user input.
+CSS Animations and Transforms: Enhancing visual appeal with smooth transitions.
+Future Enhancements
+Prospective Project Evolution
+Site Name: Prasadam Tea & Coffee
+Tagline: "Serve the Tea"
 
-## Project features
+To elevate the functionality and user experience, the site will include:
 
-- Semantic HTML5
-- Flexbox
-- Positioning
-- Flat BEM file structure
-- A custom form
-- CSS animation and transform
+"Order Now" Page: A dedicated page to facilitate seamless online ordering.
+Shopping Cart Integration: Allowing users to review and adjust their selections.
+Payment Gateway: Secure payment processing for customer convenience.
+Interactive Map: A navigational tool for locating the coffee shop.
+Photo Catalogue: A visually engaging menu with high-quality images of each item to improve customer service and marketing impact.
 
-## Plans on improving the Future:
-
-_Prospective Site Name: Prasadam Tea & Coffee_
-
-_Prospective Sloan: "Serve the Tea"_
-
-_What would complement this website is an "Order Now", or "Place your Order" page. It would include all elements necessary to process a purchase order, including an order form, a shopping cart, payment method, and a link to a directional map. Visualizing your order is important in customer service and marketing so a photo catalogue of each menu item will be included_
+By incorporating these features, the project will transition from a static website to a comprehensive e-commerce solution, enhancing usability and providing a professional-grade portfolio piece.
