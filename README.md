@@ -22,3 +22,4 @@ Interactive Map: A navigational tool for locating the coffee shop.
 Photo Catalogue: A visually engaging menu with high-quality images of each item to improve customer service and marketing impact.
 
 By incorporating these features, the project will transition from a static website to a comprehensive e-commerce solution, enhancing usability and providing a professional-grade portfolio piece.
+
