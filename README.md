@@ -4,7 +4,7 @@ This project is a responsive **coffee shop landing page** built during **Sprint 
 
 ---
 
-## ☕ Project Overview
+## Project Overview
 
 The goal of this project was to refactor an existing layout to use a **flat BEM file structure**, then complete the landing page by adding new sections and enhancements.
 
