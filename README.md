@@ -17,15 +17,7 @@ In this final stage, the project includes:
 
 ---
 
-## 🚀 Live Demo
-
-- **GitHub Pages:**  
-  👉 _Add your deployed project link here_  
-  `https://<your-username>.github.io/<repository-name>/`
-
----
-
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **HTML5**
   - Semantic markup
@@ -39,7 +31,7 @@ In this final stage, the project includes:
 
 ---
 
-## 📐 Key Features
+## Key Features
 
 ### Menu Section
 - Complex multi-column layout using **Flexbox**
@@ -62,7 +54,7 @@ In this final stage, the project includes:
 
 ---
 
-## 🧱 BEM Methodology
+## BEM Methodology
 
 This project uses a **flat BEM file structure**, improving readability and maintainability.
 
@@ -75,7 +67,7 @@ Each block has its own CSS file, following best practices for scalable frontend 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 project-root/
 ├── blocks/
@@ -94,7 +86,7 @@ Copy code
 
 ---
 
-## 📚 What I Learned
+## What I Learned
 
 - Refactoring CSS into a flat BEM structure
 - Building complex layouts with Flexbox
@@ -104,7 +96,7 @@ Copy code
 
 ---
 
-## ✅ Project Checklist
+## Project Checklist
 
 - [x] Flat BEM file structure implemented
 - [x] Menu section added and styled
