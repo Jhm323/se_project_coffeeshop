@@ -17,6 +17,25 @@ In this final stage, the project includes:
 
 ---
 
+## Preview
+
+### Hero Section
+![Hero Section - Speciality Coffee in the Triple Peaks Library](images/screenshot-hero.png)
+
+### Recipes Section
+![Recipes Section - AeroPress and French Press brewing guides](images/screenshot-recipes.png)
+
+### Book a Table
+![Book a Table - Reservation form](images/screenshot-booking.png)
+
+### Menu
+![Menu - Filter, Espresso, and Baked Goods](images/screenshot-menu.png)
+
+### About the Coffee Shop
+![About Section - Mission and environmental commitment](images/screenshot-about.png)
+
+---
+
 ## Technologies Used
 
 - **HTML5**
