@@ -1,5 +1,12 @@
 # Coffee Shop Landing Page ☕️
 
+![HTML5](https://img.shields.io/badge/HTML5-Semantic%20Markup-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-Flexbox%20%7C%20Animations-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![BEM](https://img.shields.io/badge/BEM-Methodology-000000?style=for-the-badge)
+![Responsive](https://img.shields.io/badge/Responsive-Desktop%20%7C%20Tablet%20%7C%20Mobile-4CAF50?style=for-the-badge)
+![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+
 This project is a responsive **coffee shop landing page** built during **Sprint 2: Advanced HTML and CSS** of the TripleTen Software Engineering program. It represents the **final stage (Stage 4)** of Project 2 and focuses on clean layout implementation, **BEM methodology**, animations, and polished UI interactions.
 
 ---
