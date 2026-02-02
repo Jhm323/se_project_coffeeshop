@@ -7,7 +7,7 @@
 ![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-This project is a responsive **coffee shop landing page** built during **Sprint 2: Advanced HTML and CSS** of the TripleTen Software Engineering program. It represents the **final stage (Stage 4)** of Project 2 and focuses on clean layout implementation, **BEM methodology**, animations, and polished UI interactions.
+This project is a responsive **coffee shop landing page**. It focuses on clean layout implementation, **BEM methodology**, animations, and polished UI interactions.
 
 ---
 
