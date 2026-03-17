@@ -1,11 +1,14 @@
 import express from "express";
 import { pool } from "../db/db.js";
+import { requireFields } from "../utils/validate.js";
 
 const router = express.Router();
 
 // POST /reservations [save booking]
 router.post("/", async (req, res, next) => {
   try {
+    requireFields(req.body, ["name", "guests", "date_time", "email"]);
+
     const { name, guests, date_time, email } = req.body;
 
     const result = await pool.query(

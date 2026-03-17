@@ -1,5 +1,6 @@
 import express from "express";
 import { pool } from "../db/db.js";
+import { requireFields } from "../utils/validate.js";
 
 const router = express.Router();
 
@@ -23,6 +24,8 @@ router.get("/", async (req, res, next) => {
 // POST /menu [add item]
 router.post("/", async (req, res, next) => {
   try {
+    requireFields(req.body, ["category", "name", "price", "is_available"]);
+
     const { category, name, price, is_available } = req.body;
 
     const result = await pool.query(
@@ -39,6 +42,8 @@ router.post("/", async (req, res, next) => {
 // PUT /menu/:id [update price... availability]
 router.put("/:id", async (req, res, next) => {
   try {
+    requireFields(req.body, ["id", "price", "is_available"]);
+
     const { id } = req.params;
     const { price, is_available } = req.body;
 
