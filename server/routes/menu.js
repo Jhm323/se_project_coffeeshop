@@ -53,7 +53,8 @@ router.put("/:id", async (req, res, next) => {
 
     res.json(result.rows[0]);
   } catch (err) {
-    next(err);
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
   }
 });
 

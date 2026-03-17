@@ -28,3 +28,21 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// catch-all, unknown routes
+app.use((err, req, res, next) => {
+  console.error("Unhandled error:", err);
+
+  res.status(err.status || 500).json({
+    error: err.message || "Internal Server Error",
+  });
+});
+
+// middleware
+app.use((err, req, res, next) => {
+  console.error("Unhandled error:", err);
+
+  res.status(err.status || 500).json({
+    error: err.message || "Internal Server Error",
+  });
+});
