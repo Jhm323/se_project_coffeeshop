@@ -42,24 +42,21 @@ router.post("/", async (req, res, next) => {
 // PUT /menu/:id [update price... availability]
 router.put("/:id", async (req, res, next) => {
   try {
-    requireFields(req.body, ["id", "price", "is_available"]);
-
-    const { id } = req.params;
     const { price, is_available } = req.body;
+    const { id } = req.params;
 
     const result = await pool.query(
       `UPDATE menu_items
-       SET price = COALESCE($1, price),
-           is_available = COALESCE($2, is_available)
+       SET price = $1,
+           is_available = $2
        WHERE id = $3
        RETURNING *`,
-      [price, is_available, id],
+      [price, is_available, parseInt(id, 10)],
     );
 
     res.json(result.rows[0]);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Database error" });
+    next(err);
   }
 });
 

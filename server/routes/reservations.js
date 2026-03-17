@@ -12,14 +12,13 @@ router.post("/", async (req, res, next) => {
     const { name, guests, date_time, email } = req.body;
 
     const result = await pool.query(
-      "INSERT INTO reservations (name, guests, date_time, email) VALUES ($1, $2, $3, $4) RETURNING *",
+      "INSERT INTO reservations (name, guests, date_time, email, created_at) VALUES ($1, $2, $3, $4, NOW()) RETURNING *",
       [name, guests, date_time, email],
     );
 
     res.status(201).json(result.rows[0]);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Database error" });
+    next(err);
   }
 });
 
