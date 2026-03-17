@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Coffee Shop Landing Page" />
-    <meta name="keywords" content="HTML, CSS" />
-    <meta name="author" content="j. holden moore" />
+    <meta name="keywords" content="Coffee, HTML, CSS" />
+    <meta name="author" content="J. Holden Moore" />
     <link href="./pages/index.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +23,7 @@
         <nav class="nav">
           <img
             src="./images/logo_coffeeshop_dark.svg"
-            alt="coffeshop logo"
+            alt="coffee shop logo"
             class="nav__logo"
           />
           <ul class="nav__links">
@@ -35,7 +35,7 @@
         </nav>
 
         <h1 class="header__title">
-          <span class="header__span-accent"> Speciality Coffee </span> in the
+          <span class="header__span-accent">Specialty Coffee</span> in the
           Triple Peaks Library
         </h1>
         <p class="header__description">
@@ -45,12 +45,12 @@
         <img
           src="./images/inside_coffee_shop.png"
           class="header__image"
-          alt="coffee shop"
+          alt="coffee shop interior"
         />
         <div class="header__footer">
           <div>
             <p class="header__paragraph">Hours</p>
-            <p class="header__paragraph">Monday - Friday (10:00 -19:00)</p>
+            <p class="header__paragraph">Monday - Friday (10:00 - 19:00)</p>
             <p class="header__paragraph">Saturday - Sunday (11:00 - 18:00)</p>
           </div>
           <p class="header__paragraph">
@@ -71,7 +71,7 @@
               <iframe
                 class="recipes__iframe"
                 src="https://www.youtube.com/embed/j6VlT_jUVPc?si=dG-DWeeXJKlCos3g"
-                title="YouTube video player"
+                title="Aeropress Recipe"
                 allow="
                   accelerometer;
                   autoplay;
@@ -84,14 +84,14 @@
                 allowfullscreen
               ></iframe>
               <p class="recipes__video-caption">
-                <span>Aeropress Recipe</span>~5min
+                <span>Aeropress Recipe</span> ~5min
               </p>
             </li>
             <li>
               <iframe
                 class="recipes__iframe"
                 src="https://www.youtube.com/embed/st571DYYTR8?si=hP4ngj3oru3FoEg0"
-                title="YouTube video player"
+                title="French Press Recipe"
                 allow="
                   accelerometer;
                   autoplay;
@@ -104,7 +104,7 @@
                 allowfullscreen
               ></iframe>
               <p class="recipes__video-caption">
-                <span>French Press Recipe</span>~15min
+                <span>French Press Recipe</span> ~15min
               </p>
             </li>
           </ul>
@@ -112,7 +112,7 @@
 
         <section class="reservation" id="reservations">
           <h2 class="reservation__title">Book a Table</h2>
-          <form class="reservation__form">
+          <form class="reservation__form" id="reservation-form">
             <fieldset class="reservation__fieldset">
               <label for="name" class="reservation__label">Name*</label>
               <input
@@ -123,6 +123,7 @@
                 placeholder="Name Surname"
                 required
               />
+
               <label for="number-of-guests" class="reservation__label"
                 >Number of Guests*</label
               >
@@ -130,20 +131,22 @@
                 type="number"
                 class="reservation__input"
                 id="number-of-guests"
-                name="number of guests"
+                name="guests"
                 placeholder="1-8"
                 required
               />
+
               <label for="date-time" class="reservation__label"
                 >Date & Time*</label
               >
               <input
                 type="datetime-local"
                 class="reservation__input"
-                name="date"
                 id="date-time"
+                name="date_time"
                 required
               />
+
               <label for="email" class="reservation__label">Your email*</label>
               <input
                 type="email"
@@ -153,20 +156,20 @@
                 placeholder="email@email.com"
                 required
               />
-              <button type="submit" class="reservation__button">
-                Book a table
-              </button>
 
               <label for="terms-of-use" class="reservation__checkbox">
                 <input
                   type="checkbox"
-                  class="reservation__checkbox-checkbox"
-                  name="checkbox"
                   id="terms-of-use"
+                  name="terms"
                   required
                 />
-                I agree with the terms of use</label
-              >
+                I agree with the terms of use
+              </label>
+
+              <button type="submit" class="reservation__button">
+                Book a table
+              </button>
             </fieldset>
           </form>
         </section>
@@ -178,100 +181,42 @@
             use biodegradable cups. All teas from our collection are $2/cup.
           </p>
 
-          <ul class="menu__cards">
-            <li class="card">
-              <h5 class="card__title">Filter</h5>
-              <ul class="card__list">
-                <li class="card__list-item">
-                  Regular (12oz)
-                  <span class="card__list-divider"></span>
-                  $1
-                </li>
-                <li class="card__list-item">
-                  Large (16oz)
-                  <span class="card__list-divider"></span>
-                  $1.25
-                </li>
-                <li class="card__list-item">
-                  XL (20oz)
-                  <span class="card__list-divider"></span>
-                  $1.5
-                </li>
-                <li class="card__list-item">
-                  Party Size (24oz. decaf)
-                  <span class="card__list-divider"></span>
-                  $1.75
-                </li>
-                <li class="card__list-item">
-                  Iced Coffee (16oz)
-                  <span class="card__list-divider"></span>
-                  $1.25
-                </li>
-              </ul>
-            </li>
+          <!-- dynamic menu container -->
+          <ul class="menu__cards" id="menu-container"></ul>
+        </section>
 
-            <li class="card">
-              <h5 class="card__title">Espresso</h5>
-              <ul class="card__list">
-                <li class="card__list-item">
-                  Macchiato
-                  <span class="card__list-divider"></span>
-                  $2.25
-                </li>
-                <li class="card__list-item">
-                  Cortado
-                  <span class="card__list-divider"></span>
-                  $2.5
-                </li>
-                <li class="card__list-item">
-                  Mocha
-                  <span class="card__list-divider"></span>
-                  $3
-                </li>
-                <li class="card__list-item">
-                  Sunrise in the Bay Area (decaf)
-                  <span class="card__list-divider"></span>
-                  $10.00
-                </li>
-              </ul>
-            </li>
-
-            <li class="card">
-              <h5 class="card__title">Baked Goods</h5>
-              <ul class="card__list">
-                <li class="card__list-item">
-                  Almond Croissant
-                  <span class="card__list-divider"></span>
-                  $2
-                </li>
-                <li class="card__list-item">
-                  Banana Bread
-                  <span class="card__list-divider"></span>
-                  $2
-                </li>
-                <li class="card__list-item">
-                  Key Lime Pie
-                  <span class="card__list-divider"></span>
-                  $1.75
-                </li>
-                <li class="card__list-item">
-                  Blue Velvet Cake
-                  <span class="card__list-divider"></span>
-                  $3.75
-                </li>
-                <li class="card__list-item">
-                  Web Cookie
-                  <span class="card__list-divider"></span>
-                  $2
-                </li>
-                <li class="card__list-item">
-                  Fresh Bug'uette
-                  <span class="card__list-divider"></span>
-                  $.25
-                </li>
-              </ul>
-            </li>
-          </ul>
+        <section class="contact" id="contact">
+          <h2 class="contact__title">Contact Us</h2>
+          <form class="contact__form" id="contact-form">
+            <fieldset class="contact__fieldset">
+              <label for="contact-name">Name*</label>
+              <input
+                type="text"
+                id="contact-name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+              <label for="contact-email">Email*</label>
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                placeholder="Your email"
+                required
+              />
+              <label for="contact-message">Message*</label>
+              <textarea
+                id="contact-message"
+                name="message"
+                placeholder="Your message"
+                required
+              ></textarea>
+              <button type="submit" class="contact__button">
+                Send Message
+              </button>
+            </fieldset>
+          </form>
         </section>
 
         <section class="about" id="about">
@@ -285,12 +230,9 @@
               Our main mission is keeping guests cozy and energized.
             </p>
             <p class="about__paragraph">
-              Besides that, we try to reduce our environmental impact — so we
-              don't sell single-use cups. But you can buy one of our reusable
-              cups!
+              We try to reduce our environmental impact — no single-use cups.
             </p>
           </div>
-
           <div class="about__circle about__circle_animation_blurred"></div>
           <div class="about__circle"></div>
         </section>
@@ -300,10 +242,9 @@
         <div class="footer__columns">
           <img
             src="./images/logo_coffeeshop_light.svg"
-            alt="tripleten logo"
+            alt="coffee shop logo"
             class="footer__logo"
           />
-
           <div class="footer__social">
             <h3 class="footer__column-heading">Social Media</h3>
             <ul class="footer__list">
@@ -311,7 +252,7 @@
                 <a href="#" class="footer__column-link">
                   <img
                     src="./images/facebook_white.svg"
-                    alt="facebook-icon"
+                    alt="facebook icon"
                     class="footer__social-icon"
                   />
                   Facebook
@@ -321,7 +262,7 @@
                 <a href="#" class="footer__column-link">
                   <img
                     src="./images/instagram_white.svg"
-                    alt="instagram-icon"
+                    alt="instagram icon"
                     class="footer__social-icon"
                   />
                   Instagram
@@ -333,6 +274,7 @@
         <p class="footer__copyright">&copy;2024 J. Holden Moore</p>
       </footer>
     </div>
+
     <script type="module" src="./src/index.js"></script>
   </body>
 </html>
