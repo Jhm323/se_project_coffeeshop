@@ -18,31 +18,23 @@ app.use("/reservations", reservationsRouter);
 app.use("/menu", menuRouter);
 app.use("/contact", contactRouter);
 
+// --- Root route for testing ---
+app.get("/", (req, res) => {
+  res.json({ message: "Coffee Shop API is running!" });
+});
+
+// --- 404 handler ---
 app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });
 
+// --- Error handler ---
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: "Something went wrong!" });
+  console.error("Unhandled error:", err.stack);
+  res.status(500).json({ error: err.message || "Internal Server Error" });
 });
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-// catch-all, unknown routes
-app.use((err, req, res, next) => {
-  console.error("Unhandled error:", err);
-
-  res.status(err.status || 500).json({
-    error: err.message || "Internal Server Error",
-  });
-});
-
-// middleware
-app.use((err, req, res, next) => {
-  console.error("Unhandled error:", err);
-
-  res.status(err.status || 500).json({
-    error: err.message || "Internal Server Error",
-  });
+// --- Start server ---
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
