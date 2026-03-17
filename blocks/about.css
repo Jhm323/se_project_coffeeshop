@@ -32,7 +32,6 @@
 }
 
 .about__paragraph {
-  gap: 20px;
   max-width: 660px;
   font-family: "Noto Serif", "Times New Roman", serif;
   font-style: normal;

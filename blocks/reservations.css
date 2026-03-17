@@ -60,7 +60,7 @@
   box-sizing: border-box;
 }
 
-.reservation__input reservation__input_date-time {
+.reservation__input {
   border-radius: 4px;
   height: 60px;
   width: 385px;
