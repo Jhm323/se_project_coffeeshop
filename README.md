@@ -1,40 +1,35 @@
-# Coffee Shop Landing Page ☕️
+# Coffee Shop ☕️
 
 ![HTML5](https://img.shields.io/badge/HTML5-Semantic%20Markup-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-Flexbox%20%7C%20Animations-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%20Modules-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![BEM](https://img.shields.io/badge/BEM-Methodology-000000?style=for-the-badge)
-![Responsive](https://img.shields.io/badge/Responsive-Desktop%20%7C%20Tablet%20%7C%20Mobile-4CAF50?style=for-the-badge)
 ![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-In%20Progress-blue?style=for-the-badge)
 
-This project is a responsive **coffee shop landing page**. It focuses on clean layout implementation, **BEM methodology**, animations, and polished UI interactions.
-
----
-
-## Project Objective
-
-The objective of this project was to build a fully responsive, visually polished marketing landing page using modern HTML and CSS best practices. The project emphasizes maintainable styling through BEM methodology, clean semantic markup, and subtle animations to enhance user experience without sacrificing performance.
-
-Key goals included:
-
-* Refactoring CSS into a flat, scalable BEM structure
-* Implementing complex layouts using Flexbox
-* Enhancing UI through animations, transitions, and hover states
-* Delivering a production-ready static site suitable for deployment
+A responsive coffee shop landing page with a live REST API backend. The frontend fetches menu data dynamically and handles table reservations and contact form submissions via a Node.js/Express/PostgreSQL server.
 
 ---
 
 ## Project Overview
 
-The goal of this project was to refactor an existing layout to use a **flat BEM file structure**, then complete the landing page by adding new sections and UI enhancements.
+This project began as a static HTML/CSS landing page and has been extended into a full-stack application. The frontend uses vanilla JavaScript ES modules to communicate with a custom-built REST API. The backend follows an MVC-style architecture with separated routes, controllers, and database logic.
 
-In this final stage, the project includes:
+### Frontend
 
-* A fully styled **Menu section**
-* An animated **About the Coffee Shop** section
-* A structured and reusable **Footer**
-* Hover effects and smooth transitions
-* Refactored CSS using **BEM methodology**
+- Responsive landing page built with semantic HTML and BEM-structured CSS
+- ES module JavaScript that fetches menu data and submits forms via `fetch()`
+- Sections: Hero, Recipes, Book a Table, Menu, Contact, Footer
+
+### Backend
+
+- REST API built with Node.js and Express
+- PostgreSQL database with three tables: `reservations`, `menu_items`, `contact_messages`
+- MVC pattern: routes handle HTTP wiring, controllers own business logic
+- Centralized error handling middleware with proper HTTP status codes
+- Input validation utility used across all POST routes
 
 ---
 
@@ -42,151 +37,192 @@ In this final stage, the project includes:
 
 ### Hero Section
 
-![Hero Section - Speciality Coffee in the Triple Peaks Library](images/screenshot-hero.png)
+![Hero Section](images/screenshot-hero.png)
 
 ### Recipes Section
 
-![Recipes Section - AeroPress and French Press brewing guides](images/screenshot-recipes.png)
+![Recipes Section](images/screenshot-recipes.png)
 
 ### Book a Table
 
-![Book a Table - Reservation form](images/screenshot-booking.png)
+![Book a Table](images/screenshot-booking.png)
 
 ### Menu
 
-![Menu - Filter, Espresso, and Baked Goods](images/screenshot-menu.png)
+![Menu](images/screenshot-menu.png)
 
 ### About the Coffee Shop
 
-![About Section - Mission and environmental commitment](images/screenshot-about.png)
+![About Section](images/screenshot-about.png)
 
 ---
 
-## Technologies Used
+## Tech Stack
 
-* **HTML5**
-
-  * Semantic markup
-* **CSS3**
-
-  * Flexbox
-  * Animations
-  * Transitions
-* **BEM (Block Element Modifier)**
-* **Git & GitHub**
-* **GitHub Pages**
-
----
-
-## Key Features
-
-### Menu Section
-
-* Complex multi-column layout using **Flexbox**
-* Clean typography and spacing
-* Responsive structure
-
-### About Section
-
-* Circular design elements
-* **CSS animation** for a subtle pulsing effect
-* Improved visual hierarchy
-
-### Footer
-
-* Structured layout using reusable patterns
-* Consistent spacing and alignment
-
-### UI Enhancements
-
-* Hover states for interactive elements
-* Smooth transitions for improved user experience
-
----
-
-## BEM Methodology
-
-This project uses a **flat BEM file structure**, improving readability and long-term maintainability.
-
-**BEM structure:**
-
-* **Block** – standalone components (e.g. `menu`, `about`, `footer`)
-* **Element** – parts of a block (e.g. `menu__item`, `footer__link`)
-* **Modifier** – variations (e.g. `menu__item_highlighted`)
-
-Each block has its own CSS file, following scalable frontend styling best practices.
+| Layer       | Technology               |
+| ----------- | ------------------------ |
+| Markup      | HTML5 (semantic)         |
+| Styling     | CSS3, Flexbox, BEM       |
+| Frontend JS | Vanilla ES Modules       |
+| Backend     | Node.js, Express 5       |
+| Database    | PostgreSQL via `pg` Pool |
+| Dev tooling | nodemon, dotenv          |
 
 ---
 
 ## Project Structure
 
 ```
-project-root/
-├── blocks/
-│   ├── menu.css
-│   ├── about.css
-│   ├── footer.css
-│   └── ...
-├── images/
+se_project_coffeeshop/
+├── index.html
 ├── pages/
 │   └── index.css
-├── index.html
-└── README.md
+├── blocks/              ← BEM component CSS files
+│   ├── header.css
+│   ├── menu.css
+│   ├── reservations.css
+│   └── ...
+├── images/
+├── src/
+│   ├── index.js         ← Frontend entry point
+│   └── utils/
+│       └── api.js       ← All fetch calls to the API
+├── vendor/
+│   └── normalize.css
+└── server/
+    ├── server.js        ← Express app entry point
+    ├── schema.sql       ← Database schema
+    ├── .env.example     ← Environment variable template
+    ├── package.json
+    ├── db/
+    │   └── db.js        ← PostgreSQL Pool connection
+    ├── routes/
+    │   ├── menu.js
+    │   ├── reservations.js
+    │   └── contact.js
+    ├── controllers/
+    │   ├── menuController.js
+    │   ├── reservationsController.js
+    │   └── contactController.js
+    ├── middleware/
+    │   └── errorHandler.js
+    └── utils/
+        └── validate.js
 ```
 
 ---
 
-## What I Learned
+## API Reference
 
-* Refactoring CSS into a flat BEM structure
-* Building complex layouts with Flexbox
-* Applying CSS animations effectively without overuse
-* Creating reusable layout patterns
-* Writing clear, maintainable frontend code
+### Menu
 
----
+| Method | Endpoint    | Description                                          |
+| ------ | ----------- | ---------------------------------------------------- |
+| GET    | `/menu`     | Returns all available menu items grouped by category |
+| POST   | `/menu`     | Add a new menu item                                  |
+| PUT    | `/menu/:id` | Update price or availability                         |
+| DELETE | `/menu/:id` | Remove a menu item                                   |
 
-## Browser & Responsiveness Support
+### Reservations
 
-The landing page is fully responsive and tested across modern browsers. It loads quickly and displays correctly on desktop, tablet, and mobile screen sizes.
+| Method | Endpoint        | Description                   |
+| ------ | --------------- | ----------------------------- |
+| POST   | `/reservations` | Submit a table booking        |
+| GET    | `/reservations` | List all reservations (admin) |
 
----
+### Contact
 
-## Conclusion
-
-This project successfully delivers a clean, responsive coffee shop landing page that demonstrates strong fundamentals in HTML and CSS. By combining semantic markup, BEM-based styling, and thoughtful UI enhancements, the project reflects production-ready frontend practices suitable for real-world marketing websites.
-
----
-
-## Future Improvements & Business Impact
-
-* Improve accessibility with enhanced ARIA labels and contrast checks
-* Optimize images and assets for improved performance and SEO
-* Add form validation and backend integration for reservations
-* Introduce analytics to track user engagement and conversion rates
-* Expand the site with additional content pages (locations, blog, contact)
-
-From a business perspective, these improvements could increase user engagement, improve discoverability, and support customer conversion through online reservations.
+| Method | Endpoint   | Description              |
+| ------ | ---------- | ------------------------ |
+| POST   | `/contact` | Submit a contact message |
 
 ---
 
-## Project Checklist
+## Getting Started
 
-* [x] Flat BEM file structure implemented
-* [x] Menu section added and styled
-* [x] About section animation implemented
-* [x] Footer created and styled
-* [x] Hover effects and transitions added
-* [x] Semantic HTML used
-* [x] Project deployed to GitHub Pages
-* [x] README.md completed
+### Prerequisites
+
+- Node.js v18+
+- PostgreSQL running locally
+
+### Backend Setup
+
+```bash
+# Navigate to the server directory
+cd server
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your PostgreSQL credentials
+
+# Create the database
+createdb coffee_shop
+
+# Run the schema
+psql -d coffee_shop -f schema.sql
+
+# Start the dev server
+npm run dev
+```
+
+The API will be available at `http://localhost:5000`.
+
+### Frontend Setup
+
+Open `index.html` directly in a browser or serve it with a local static server:
+
+```bash
+# From the project root
+npx serve .
+```
 
 ---
 
-## 👤 Author
+## BEM Methodology
+
+CSS is organized using a flat BEM file structure — one file per block, located in the `blocks/` directory and imported via `pages/index.css`.
+
+- **Block** — standalone component (e.g. `menu`, `header`, `footer`)
+- **Element** — part of a block (e.g. `menu__title`, `footer__link`)
+- **Modifier** — variation (e.g. `about__circle_animation_blurred`)
+
+---
+
+## Checklist
+
+### Frontend
+
+- [x] Flat BEM file structure
+- [x] Menu section dynamically rendered from API
+- [x] Reservation form submits to API
+- [x] Contact form submits to API
+- [x] About section animation
+- [x] Semantic HTML throughout
+
+### Backend
+
+- [x] Express server with CORS and JSON middleware
+- [x] PostgreSQL schema with three tables
+- [x] MVC pattern — routes and controllers separated
+- [x] Centralized error handler with HTTP status codes
+- [x] Input validation on all POST routes
+- [x] 404 handler for unknown routes
+- [x] `.env` excluded from version control
+
+### In Progress
+
+- [ ] `loadMenu` null guard for API-down state
+- [ ] Seed script for initial menu data
+- [ ] Frontend CSS for contact section
+
+---
+
+## Author
 
 **James Holden Moore**
 
-* GitHub: [https://github.com/Jhm323](https://github.com/Jhm323)
-* LinkedIn: [https://www.linkedin.com/in/james-holden-moore](https://www.linkedin.com/in/james-holden-moore)
-
+- GitHub: [https://github.com/Jhm323](https://github.com/Jhm323)
+- LinkedIn: [https://www.linkedin.com/in/james-holden-moore](https://www.linkedin.com/in/james-holden-moore)
