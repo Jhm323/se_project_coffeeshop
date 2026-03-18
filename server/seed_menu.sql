@@ -29,12 +29,12 @@ INSERT INTO menu_items (category, name, price, is_available, description, tags) 
   ('Baked Goods', 'The Solidarity Brownie', 3.00, TRUE, 'Dark chocolate brownie. Oat flour, egg replacer, avocado vegetable butter. Fudgy, rich, gluten free.', ARRAY['vegan', 'gluten-free', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
   ('Baked Goods', 'Banana Solidarity Bread', 2.75, TRUE, 'Banana bread. Oat flour and egg replacer. No dairy. No pretension. Just warmth.', ARRAY['vegan', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
   ('Baked Goods', 'R2-Tea-Cakes', 2.25, TRUE, 'Oat and lemon tea cakes. Rice milk and avocado vegetable butter. Small, bright, beep-boop delicious.', ARRAY['vegan', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
-  ('Baked Goods', 'The Rebellion Muffin', 2.50, TRUE, 'Blueberry oat muffin. Egg replacer, oat flour, avocado vegetable butter. Rises every morning.', 'Yoda''s Green', ARRAY['vegan', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
+  ('Baked Goods', 'The Rebellion Muffin', 2.50, TRUE, 'Blueberry oat muffin. Egg replacer, oat flour, avocado vegetable butter. Rises every morning.', ARRAY['vegan', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
   ('Baked Goods', 'Love & A Cookie', 1.50, TRUE, 'A simple oat and raisin cookie. Because sometimes love is the only ingredient that matters.', ARRAY['vegan', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']);
 
 INSERT INTO menu_items (category, name, price, is_available, description, tags) VALUES
   ('Light Food', 'The Clock-In Wrap', 6.50, TRUE, 'Hummus, roasted red pepper, arugula, cucumber, pickled onion in a rice flour wrap.', ARRAY['vegan', 'gluten-free', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
-  ('Light Food', 'Han''s Solo Avocado Toast', 6.00, TRUE, 'Avocado on gluten free sourdough. Everything seasoning, hemp seeds, lemon.', 'Yoda''s Green', ARRAY['vegan', 'gluten-free', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
+  ('Light Food', 'Han''s Solo Avocado Toast', 6.00, TRUE, 'Avocado on gluten free sourdough. Everything seasoning, hemp seeds, lemon.', ARRAY['vegan', 'gluten-free', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
   ('Light Food', 'The Overtime Bagel', 5.50, TRUE, 'Gluten free everything bagel with sunflower seed schmear and cucumber.', ARRAY['vegan', 'gluten-free', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
   ('Light Food', 'Death Star Grain Bowl', 7.25, TRUE, 'Quinoa, roasted chickpeas, beets, lemon dressing, microgreens. Destructive levels of nutrition.', ARRAY['vegan', 'gluten-free', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']),
   ('Light Food', 'A New Hop Salad', 6.75, TRUE, 'Seasonal greens, shaved fennel, radish, cucumber, hemp seeds, lemon vinaigrette.', ARRAY['vegan', 'gluten-free', 'nut-free', 'dairy-free', 'soy-free', 'egg-free']);
