@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import reservationsRouter from "./routes/reservations.js";
 import menuRouter from "./routes/menu.js";
 import contactRouter from "./routes/contact.js";
+import errorHandler from "./middleware/errorHandler.js";
 
 dotenv.config();
 
@@ -29,10 +30,7 @@ app.use((req, res) => {
 });
 
 // Error handler
-app.use((err, req, res, next) => {
-  console.error("Unhandled error:", err.stack);
-  res.status(500).json({ error: err.message || "Internal Server Error" });
-});
+app.use(errorHandler);
 
 // Start server
 app.listen(PORT, () => {
