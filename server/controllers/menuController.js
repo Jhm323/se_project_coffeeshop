@@ -21,12 +21,19 @@ export const createMenuItem = async (req, res, next) => {
   try {
     requireFields(req.body, ["category", "name", "price"]);
 
-    const { category, name, price, is_available = true } = req.body;
+    const {
+      category,
+      name,
+      price,
+      is_available = true,
+      description = null,
+      tags = [],
+    } = req.body;
 
     const result = await pool.query(
-      `INSERT INTO menu_items (category, name, price, is_available)
-       VALUES ($1, $2, $3, $4) RETURNING *`,
-      [category, name, price, is_available],
+      `INSERT INTO menu_items (category, name, price, is_available, description, tags)
+       VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
+      [category, name, price, is_available, description, tags],
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
