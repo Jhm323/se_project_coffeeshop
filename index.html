@@ -47,6 +47,17 @@
           class="header__image"
           alt="coffee shop interior"
         />
+
+        <div class="header__footer">
+          <div>
+            <p class="header__paragraph">Hours</p>
+            <p class="header__paragraph">Monday – Friday (10:00 – 19:00)</p>
+            <p class="header__paragraph">Saturday – Sunday (11:00 – 18:00)</p>
+          </div>
+          <p class="header__paragraph">
+            200 Success Avenue, The Town of Triple Peaks
+          </p>
+        </div>
       </header>
 
       <main class="content">
@@ -74,7 +85,7 @@
                 "
                 allowfullscreen
               ></iframe>
-              <p class="recipes__video-caption"><span>Aeropress</span> ~5min</p>
+              <p class="recipes__video-caption"><span>Aeropress</span>~5min</p>
             </li>
             <li>
               <iframe
@@ -166,21 +177,75 @@
         <section class="contact" id="about">
           <h2 class="contact__title">Contact Us</h2>
           <form class="contact__form">
-            <label for="contact-name">Name*</label>
-            <input type="text" id="contact-name" required />
+            <fieldset class="contact__fieldset">
+              <label for="contact-name" class="contact__label">Name*</label>
+              <input
+                type="text"
+                id="contact-name"
+                class="contact__input"
+                required
+              />
 
-            <label for="contact-email">Email*</label>
-            <input type="email" id="contact-email" required />
+              <label for="contact-email" class="contact__label">Email*</label>
+              <input
+                type="email"
+                id="contact-email"
+                class="contact__input"
+                required
+              />
 
-            <label for="contact-message">Message*</label>
-            <textarea id="contact-message" rows="4" required></textarea>
+              <label for="contact-message" class="contact__label"
+                >Message*</label
+              >
+              <textarea
+                id="contact-message"
+                class="contact__textarea"
+                rows="4"
+                required
+              ></textarea>
 
-            <button type="submit" class="contact__button">Send Message</button>
+              <button type="submit" class="contact__button">
+                Send Message
+              </button>
+            </fieldset>
           </form>
         </section>
       </main>
 
       <footer class="footer">
+        <div class="footer__columns">
+          <img
+            src="./images/logo_coffeeshop_light.svg"
+            alt="coffee shop logo"
+            class="footer__logo"
+          />
+
+          <div class="footer__column_content_social">
+            <h3 class="footer__column-heading">Social Media</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="#" class="footer__column-link">
+                  <img
+                    src="./images/facebook_white.svg"
+                    alt="facebook icon"
+                    class="footer__social-icon"
+                  />
+                  Facebook
+                </a>
+              </li>
+              <li class="footer__list-item">
+                <a href="#" class="footer__column-link">
+                  <img
+                    src="./images/instagram_white.svg"
+                    alt="instagram icon"
+                    class="footer__social-icon"
+                  />
+                  Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <p class="footer__copyright">&copy; 2026 J. Holden Moore</p>
       </footer>
     </div>
