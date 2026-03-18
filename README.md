@@ -193,11 +193,8 @@ CSS is organized using a flat BEM file structure — one file per block, located
 - [x] 404 handler for unknown routes
 - [x] `.env` excluded from version control
 - [x] Menu seed data
-
-### In Progress
-
-- [ ] Live deployment
-- [ ] Updated screenshots in README
+- [x] Live deployment
+- [x] Updated screenshots in README
 
 ---
 

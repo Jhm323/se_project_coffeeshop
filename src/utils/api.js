@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://coffee-shop-api-hagu.onrender.com";
 
 export async function getMenu() {
   try {
