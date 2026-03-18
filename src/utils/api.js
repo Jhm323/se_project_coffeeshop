@@ -2,7 +2,7 @@ const BASE_URL = "http://localhost:5000";
 
 export async function getMenu() {
   try {
-    const response = await fetch(`${API_BASE}/menu`);
+    const response = await fetch(`${BASE_URL}/menu`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -36,7 +36,7 @@ export const updateMenuItem = async (id, updates) => {
   return res.json();
 };
 
-export const sendContact = async (data) => {
+export const postContact = async (data) => {
   const res = await fetch(`${BASE_URL}/contact`, {
     method: "POST",
     headers: {
@@ -47,7 +47,7 @@ export const sendContact = async (data) => {
   return res.json();
 };
 
-export const createReservation = async (data) => {
+export const postReservation = async (data) => {
   const res = await fetch(`${BASE_URL}/reservations`, {
     method: "POST",
     headers: {
