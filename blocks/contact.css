@@ -1,0 +1,98 @@
+.contact {
+  background-color: #0a2850;
+  background-image: url(../images/background_recipes.svg);
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0 120px;
+}
+
+.contact__title {
+  margin: 0 auto 80px;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 52px;
+  text-align: center;
+  color: #fff;
+}
+
+.contact__form {
+  margin: 0 auto;
+  max-width: 385px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__fieldset {
+  width: 385px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: none;
+}
+
+.contact__label {
+  margin-bottom: 8px;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+}
+
+.contact__input {
+  border-radius: 4px;
+  height: 60px;
+  width: 385px;
+  margin-bottom: 32px;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000;
+  border: 1px solid #838383;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.contact__textarea {
+  border-radius: 4px;
+  width: 385px;
+  margin-bottom: 32px;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000;
+  border: 1px solid #838383;
+  padding: 10px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.contact__button {
+  border-radius: 4px;
+  height: 60px;
+  width: 385px;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 0.7;
+  transition: opacity 0.4s ease-in-out;
+  background-color: #2f80ed;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.contact__button:hover {
+  opacity: 1;
+}
