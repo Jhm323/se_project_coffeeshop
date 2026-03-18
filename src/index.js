@@ -1,8 +1,169 @@
 import { getMenu, postReservation, postContact } from "./utils/api.js";
 
-//menu
+// Menu
 
 const menuContainer = document.querySelector("#menu-container");
+
+// Signature pairings
+const SIGNATURE_PAIRINGS = [
+  {
+    drink: "The Red Eye Act",
+    match: "The Senator (Spliff)",
+    note: "THC cold brew + slow burning spliff. The long afternoon.",
+    intensity: "heavy",
+  },
+  {
+    drink: "May the Cortado Be With You",
+    match: "The Cortado Hit",
+    note: "Balance meets balance. Neither side wins.",
+    intensity: "balanced",
+  },
+  {
+    drink: "The Kessel Pour",
+    match: "The Force Multiplier",
+    note: "Single origin pour over + citrus THC drop. Same frequency.",
+    intensity: "light",
+  },
+  {
+    drink: "Yoda's Green",
+    match: "The Force Multiplier",
+    note: "Green tea + THC tincture. Ancient and intentional.",
+    intensity: "mellow",
+  },
+];
+
+// Format display
+const FORMAT_ORDER = [
+  "THC Infusion — Add to Any Drink",
+  "THC Drinkable",
+  "Joint — In-House",
+  "Small Bowl — In-House",
+  "Spliff — In-House",
+  "Half Blunt — In-House",
+  "Roll Your Own — In-House Kit",
+  "Roll Your Own — Full Kit",
+  "Take Home — 3.5g Flower",
+  "Take Home — Pre-Roll 2-Pack",
+  "Take Home — Tincture 30ml",
+];
+
+// Format group labels
+const FORMAT_LABELS = {
+  "THC Infusion — Add to Any Drink": "Add to Your Drink",
+  "THC Drinkable": "Drinkables",
+  "Joint — In-House": "Joint",
+  "Small Bowl — In-House": "Small Bowl",
+  "Spliff — In-House": "Spliff",
+  "Half Blunt — In-House": "Half Blunt",
+  "Roll Your Own — In-House Kit": "Roll Your Own",
+  "Roll Your Own — Full Kit": "Roll Your Own",
+  "Take Home — 3.5g Flower": "Take Home",
+  "Take Home — Pre-Roll 2-Pack": "Take Home",
+  "Take Home — Tincture 30ml": "Take Home",
+};
+
+// Intensity, color class
+const INTENSITY_CLASS = {
+  light: "reserve__pair--light",
+  balanced: "reserve__pair--balanced",
+  heavy: "reserve__pair--heavy",
+  mellow: "reserve__pair--mellow",
+};
+
+const buildSignaturePairings = () => {
+  const section = document.createElement("div");
+  section.classList.add("reserve__signatures");
+
+  const heading = document.createElement("p");
+  heading.classList.add("reserve__signatures-label");
+  heading.textContent = "Signature Pairings";
+  section.appendChild(heading);
+
+  const grid = document.createElement("div");
+  grid.classList.add("reserve__pair-grid");
+
+  SIGNATURE_PAIRINGS.forEach((pair) => {
+    const card = document.createElement("div");
+    card.classList.add("reserve__pair", INTENSITY_CLASS[pair.intensity]);
+
+    card.innerHTML = `
+      <span class="reserve__pair-drink">${pair.drink}</span>
+      <span class="reserve__pair-plus">+</span>
+      <span class="reserve__pair-match">${pair.match}</span>
+      <p class="reserve__pair-note">${pair.note}</p>
+    `;
+
+    grid.appendChild(card);
+  });
+
+  section.appendChild(grid);
+  return section;
+};
+
+const buildReserveFullList = (items) => {
+  const section = document.createElement("div");
+  section.classList.add("reserve__full-list");
+
+  const heading = document.createElement("p");
+  heading.classList.add("reserve__full-list-label");
+  heading.textContent = "Full Menu";
+  section.appendChild(heading);
+
+  // Group items by format
+  const grouped = {};
+  items.forEach((item) => {
+    const label = FORMAT_LABELS[item.format] || item.format;
+    if (!grouped[label]) grouped[label] = [];
+    grouped[label].push(item);
+  });
+
+  // Render in order
+  const seenLabels = new Set();
+  FORMAT_ORDER.forEach((format) => {
+    const label = FORMAT_LABELS[format];
+    if (!label || seenLabels.has(label) || !grouped[label]) return;
+    seenLabels.add(label);
+
+    const group = document.createElement("div");
+    group.classList.add("reserve__format-group");
+
+    const formatTitle = document.createElement("h6");
+    formatTitle.classList.add("reserve__format-title");
+    formatTitle.textContent = label;
+    group.appendChild(formatTitle);
+
+    const list = document.createElement("ul");
+    list.classList.add("reserve__format-list");
+
+    grouped[label].forEach((item) => {
+      const li = document.createElement("li");
+      li.classList.add("reserve__format-item");
+
+      const namePrice = document.createElement("div");
+      namePrice.classList.add("reserve__item-row");
+      namePrice.innerHTML = `
+        <span class="reserve__item-name">${item.name}</span>
+        <span class="reserve__item-divider"></span>
+        <span class="reserve__item-price">$${Number(item.price).toFixed(2)}</span>
+      `;
+      li.appendChild(namePrice);
+
+      if (item.pairing) {
+        const pairing = document.createElement("p");
+        pairing.classList.add("reserve__item-pairing");
+        pairing.textContent = item.pairing;
+        li.appendChild(pairing);
+      }
+
+      list.appendChild(li);
+    });
+
+    group.appendChild(list);
+    section.appendChild(group);
+  });
+
+  return section;
+};
 
 const buildRegularItem = (item) => {
   const listItem = document.createElement("li");
@@ -31,55 +192,6 @@ const buildRegularItem = (item) => {
   return listItem;
 };
 
-const buildReserveItem = (item) => {
-  const listItem = document.createElement("li");
-  listItem.classList.add("card__list-item", "card__list-item--reserve");
-
-  const header = document.createElement("div");
-  header.classList.add("card__item-header");
-
-  const nameSpan = document.createElement("span");
-  nameSpan.classList.add("card__item-name");
-  nameSpan.textContent = item.name;
-
-  const priceSpan = document.createElement("span");
-  priceSpan.classList.add("card__item-price");
-  priceSpan.textContent = `$${Number(item.price).toFixed(2)}`;
-
-  header.append(nameSpan, priceSpan);
-  listItem.appendChild(header);
-
-  if (item.format) {
-    const formatBadge = document.createElement("span");
-    formatBadge.classList.add("card__item-format");
-    formatBadge.textContent = item.format;
-    listItem.appendChild(formatBadge);
-  }
-
-  if (item.description) {
-    const desc = document.createElement("p");
-    desc.classList.add("card__item-description");
-    desc.textContent = item.description;
-    listItem.appendChild(desc);
-  }
-
-  if (item.terpenes) {
-    const terpenes = document.createElement("p");
-    terpenes.classList.add("card__item-terpenes");
-    terpenes.textContent = `Terpenes: ${item.terpenes}`;
-    listItem.appendChild(terpenes);
-  }
-
-  if (item.pairing) {
-    const pairing = document.createElement("p");
-    pairing.classList.add("card__item-pairing");
-    pairing.textContent = `Pairs with: ${item.pairing}`;
-    listItem.appendChild(pairing);
-  }
-
-  return listItem;
-};
-
 const loadMenu = async () => {
   menuContainer.innerHTML = '<li class="menu__loading">Loading menu...</li>';
 
@@ -97,31 +209,29 @@ const loadMenu = async () => {
     const categoryCard = document.createElement("li");
     categoryCard.classList.add("card");
 
-    if (category === "The Reserve") {
-      categoryCard.classList.add("card--reserve");
-    }
-
     const title = document.createElement("h5");
     title.classList.add("card__title");
     title.textContent = category;
+    categoryCard.appendChild(title);
 
-    const list = document.createElement("ul");
-    list.classList.add("card__list");
+    if (category === "The Reserve") {
+      categoryCard.classList.add("card--reserve");
+      categoryCard.appendChild(buildSignaturePairings());
+      categoryCard.appendChild(buildReserveFullList(data[category]));
+    } else {
+      const list = document.createElement("ul");
+      list.classList.add("card__list");
+      data[category].forEach((item) =>
+        list.appendChild(buildRegularItem(item)),
+      );
+      categoryCard.appendChild(list);
+    }
 
-    data[category].forEach((item) => {
-      const listItem =
-        category === "The Reserve"
-          ? buildReserveItem(item)
-          : buildRegularItem(item);
-      list.appendChild(listItem);
-    });
-
-    categoryCard.append(title, list);
     menuContainer.appendChild(categoryCard);
   });
 };
 
-//reservation form
+// Reservation form
 
 const reservationForm = document.querySelector(".reservation__form");
 
@@ -147,7 +257,7 @@ if (reservationForm) {
   });
 }
 
-// contact form
+// Contact form
 
 const contactForm = document.querySelector(".contact__form");
 
@@ -172,6 +282,6 @@ if (contactForm) {
   });
 }
 
-//init
+//Init
 
 loadMenu();
