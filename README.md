@@ -6,7 +6,6 @@
 ![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![BEM](https://img.shields.io/badge/BEM-Methodology-000000?style=for-the-badge)
-![GitHub Pages](https://img.shields.io/badge/Deployed-GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-blue?style=for-the-badge)
 
 A responsive coffee shop landing page with a live REST API backend. The frontend fetches menu data dynamically and handles table reservations and contact form submissions via a Node.js/Express/PostgreSQL server.
@@ -15,7 +14,7 @@ A responsive coffee shop landing page with a live REST API backend. The frontend
 
 ## Project Overview
 
-This project began as a static HTML/CSS landing page and has been extended into a full-stack application. The frontend uses vanilla JavaScript ES modules to communicate with a custom-built REST API. The backend follows an MVC-style architecture with separated routes, controllers, and database logic.
+This project began as a static HTML/CSS landing page and has been extended into a full-stack application. The frontend uses vanilla JavaScript ES modules to communicate with a custom-built REST API. The backend follows a layered architecture with separated routes, controllers, and database logic.
 
 ### Frontend
 
@@ -27,7 +26,7 @@ This project began as a static HTML/CSS landing page and has been extended into 
 
 - REST API built with Node.js and Express
 - PostgreSQL database with three tables: `reservations`, `menu_items`, `contact_messages`
-- MVC pattern: routes handle HTTP wiring, controllers own business logic
+- Routes and controllers separated — routes handle HTTP wiring, controllers own business logic
 - Centralized error handling middleware with proper HTTP status codes
 - Input validation utility used across all POST routes
 
@@ -81,6 +80,7 @@ se_project_coffeeshop/
 │   ├── header.css
 │   ├── menu.css
 │   ├── reservations.css
+│   ├── contact.css
 │   └── ...
 ├── images/
 ├── src/
@@ -92,6 +92,7 @@ se_project_coffeeshop/
 └── server/
     ├── server.js        ← Express app entry point
     ├── schema.sql       ← Database schema
+    ├── seed_menu.sql    ← Menu seed data
     ├── .env.example     ← Environment variable template
     ├── package.json
     ├── db/
@@ -148,23 +149,13 @@ se_project_coffeeshop/
 ### Backend Setup
 
 ```bash
-# Navigate to the server directory
 cd server
-
-# Install dependencies
 npm install
-
-# Set up environment variables
 cp .env.example .env
 # Edit .env with your PostgreSQL credentials
-
-# Create the database
 createdb coffee_shop
-
-# Run the schema
 psql -d coffee_shop -f schema.sql
-
-# Start the dev server
+psql -d coffee_shop -f seed_menu.sql
 npm run dev
 ```
 
@@ -175,7 +166,6 @@ The API will be available at `http://localhost:5000`.
 Open `index.html` directly in a browser or serve it with a local static server:
 
 ```bash
-# From the project root
 npx serve .
 ```
 
@@ -197,26 +187,29 @@ CSS is organized using a flat BEM file structure — one file per block, located
 
 - [x] Flat BEM file structure
 - [x] Menu section dynamically rendered from API
+- [x] Menu loading and empty states
 - [x] Reservation form submits to API
 - [x] Contact form submits to API
-- [x] About section animation
+- [x] Contact section CSS
+- [x] Header restored with hours and address
+- [x] Footer restored with logo and social links
 - [x] Semantic HTML throughout
 
 ### Backend
 
 - [x] Express server with CORS and JSON middleware
 - [x] PostgreSQL schema with three tables
-- [x] MVC pattern — routes and controllers separated
+- [x] Routes and controllers separated
 - [x] Centralized error handler with HTTP status codes
 - [x] Input validation on all POST routes
 - [x] 404 handler for unknown routes
 - [x] `.env` excluded from version control
+- [x] Menu seed data
 
 ### In Progress
 
-- [ ] `loadMenu` null guard for API-down state
-- [ ] Seed script for initial menu data
-- [ ] Frontend CSS for contact section
+- [ ] Live deployment
+- [ ] Updated screenshots in README
 
 ---
 
