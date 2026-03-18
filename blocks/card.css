@@ -8,6 +8,18 @@
   margin: 0;
 }
 
+.menu__loading,
+.menu__empty {
+  text-align: center;
+  font-family: "Noto Serif", "Times New Roman", serif;
+  font-size: 20px;
+  color: #838383;
+  list-style-type: none;
+  padding: 40px 0;
+}
+
+/* ─── Standard Card ────────────────────────────────────────── */
+
 .card__list {
   list-style-type: none;
   padding: 0;
@@ -20,7 +32,7 @@
 
 .card__title {
   padding-bottom: 32px;
-  font-family: "inter", Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -40,7 +52,9 @@
   width: 520px;
   gap: 16px;
   display: flex;
-  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-bottom: 24px;
 }
 
 .card__list-item:last-child {
@@ -50,4 +64,116 @@
 .card__list-divider {
   border-bottom: 1px solid #000;
   flex-grow: 1;
+}
+
+.card__item-name {
+  font-weight: normal;
+}
+
+.card__item-price {
+  font-weight: 500;
+}
+
+.card__item-description {
+  width: 100%;
+  margin: 6px 0 0;
+  font-family: "Noto Serif", "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555;
+  font-style: italic;
+}
+
+/* ─── Reserve Card ─────────────────────────────────────────── */
+
+.card--reserve {
+  width: 100%;
+  max-width: 860px;
+  background-color: #0a2850;
+  border-radius: 8px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.card--reserve .card__title {
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 24px;
+  margin-bottom: 8px;
+}
+
+.card__list-item--reserve {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 0;
+}
+
+.card__list-item--reserve:last-child {
+  border-bottom: none;
+}
+
+.card__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card--reserve .card__item-name {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+}
+
+.card--reserve .card__item-price {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #2f80ed;
+}
+
+.card__item-format {
+  display: inline-block;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0a2850;
+  background-color: #2f80ed;
+  border-radius: 4px;
+  padding: 3px 10px;
+  width: fit-content;
+}
+
+.card--reserve .card__item-description {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;
+  line-height: 24px;
+  font-style: italic;
+  margin: 0;
+}
+
+.card__item-terpenes {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.card__item-pairing {
+  font-family: "Noto Serif", "Times New Roman", serif;
+  font-size: 14px;
+  font-style: italic;
+  color: #2f80ed;
+  margin: 0;
+  line-height: 20px;
 }
