@@ -44,52 +44,62 @@ const loadMenu = async () => {
 // RESERVATION FORM
 const reservationForm = document.querySelector(".reservation__form");
 
-if (reservationForm) {
-  reservationForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+reservationForm.addEventListener("submit", async (e) => {
+  e.preventDefault(); // prevent page reload
 
-    const formData = {
-      name: document.querySelector("#name").value.trim(),
-      guests: parseInt(document.querySelector("#number-of-guests").value, 10),
-      date_time: document.querySelector("#date-time").value,
-      email: document.querySelector("#email").value.trim(),
-    };
+  const data = {
+    name: document.querySelector("#name").value,
+    guests: document.querySelector("#number-of-guests").value,
+    date_time: document.querySelector("#date-time").value,
+    email: document.querySelector("#email").value,
+  };
 
-    try {
-      const result = await postReservation(formData);
-      alert(
-        `Reservation confirmed for ${result.name} on ${new Date(result.date_time).toLocaleString()}`,
-      );
-      reservationForm.reset();
-    } catch (err) {
-      console.error("Reservation failed:", err);
-      alert("Failed to book reservation. Please try again.");
-    }
-  });
-}
+  try {
+    const res = await fetch("http://localhost:5000/reservations", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) throw new Error("Failed to submit reservation");
+
+    const result = await res.json();
+    alert(`Reservation confirmed! ID: ${result.id}`);
+    reservationForm.reset();
+  } catch (err) {
+    console.error(err);
+    alert("Error submitting reservation. Try again.");
+  }
+});
 
 // CONTACT FORM
 const contactForm = document.querySelector(".contact__form");
 
-if (contactForm) {
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+contactForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const formData = {
-      name: document.querySelector("#contact-name").value.trim(),
-      email: document.querySelector("#contact-email").value.trim(),
-      message: document.querySelector("#contact-message").value.trim(),
-    };
+  const data = {
+    name: document.querySelector("#contact-name").value,
+    email: document.querySelector("#contact-email").value,
+    message: document.querySelector("#contact-message").value,
+  };
 
-    try {
-      const result = await postContact(formData);
-      alert("Message sent! Thank you for contacting us.");
-      contactForm.reset();
-    } catch (err) {
-      console.error("Failed to send contact message:", err);
-      alert("Failed to send message. Please try again.");
-    }
-  });
-}
+  try {
+    const res = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) throw new Error("Failed to send message");
+
+    const result = await res.json();
+    alert("Message sent successfully!");
+    contactForm.reset();
+  } catch (err) {
+    console.error(err);
+    alert("Error sending message. Try again.");
+  }
+});
 
 loadMenu();
