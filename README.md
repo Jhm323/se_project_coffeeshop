@@ -34,25 +34,13 @@ This project began as a static HTML/CSS landing page and has been extended into 
 
 ## Preview
 
-### Hero Section
-
-![Hero Section](images/screenshot-hero.png)
-
-### Recipes Section
-
-![Recipes Section](images/screenshot-recipes.png)
-
-### Book a Table
-
-![Book a Table](images/screenshot-booking.png)
-
-### Menu
-
-![Menu](images/screenshot-menu.png)
-
-### About the Coffee Shop
-
-![About Section](images/screenshot-about.png)
+![Site Preview](images/ScreenShot1.png)
+![Site Preview](images/ScreenShot2.png)
+![Site Preview](images/ScreenShot3.png)
+![Site Preview](images/ScreenShot4.png)
+![Site Preview](images/ScreenShot5.png)
+![Site Preview](images/ScreenShot6.png)
+![Site Preview](images/ScreenShot7.png)
 
 ---
 
