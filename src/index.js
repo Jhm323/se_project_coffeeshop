@@ -1,41 +1,57 @@
 import { getMenu, postReservation, postContact } from "./utils/api.js";
 
-// Menu
+//Menu
+
 const menuContainer = document.querySelector("#menu-container");
 
 const loadMenu = async () => {
-  try {
-    const data = await getMenu();
-    menuContainer.innerHTML = "";
+  menuContainer.innerHTML = '<li class="menu__loading">Loading menu...</li>';
 
-    Object.keys(data).forEach((category) => {
-      const categoryCard = document.createElement("li");
-      categoryCard.classList.add("card");
+  const data = await getMenu();
 
-      const title = document.createElement("h5");
-      title.classList.add("card__title");
-      title.textContent = category;
-
-      const list = document.createElement("ul");
-      list.classList.add("card__list");
-
-      data[category].forEach((item) => {
-        const listItem = document.createElement("li");
-        listItem.classList.add("card__list-item");
-        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-
-        list.appendChild(listItem);
-      });
-
-      categoryCard.append(title, list);
-      menuContainer.appendChild(categoryCard);
-    });
-  } catch (err) {
-    console.error("Failed to load menu:", err);
+  // null guard — API down or fetch failed
+  if (!data || Object.keys(data).length === 0) {
+    menuContainer.innerHTML =
+      '<li class="menu__empty">Menu unavailable. Please check back soon.</li>';
+    return;
   }
+
+  menuContainer.innerHTML = "";
+
+  Object.keys(data).forEach((category) => {
+    const categoryCard = document.createElement("li");
+    categoryCard.classList.add("card");
+
+    const title = document.createElement("h5");
+    title.classList.add("card__title");
+    title.textContent = category;
+
+    const list = document.createElement("ul");
+    list.classList.add("card__list");
+
+    data[category].forEach((item) => {
+      const listItem = document.createElement("li");
+      listItem.classList.add("card__list-item");
+
+      const nameSpan = document.createElement("span");
+      nameSpan.textContent = item.name;
+
+      const divider = document.createElement("span");
+      divider.classList.add("card__list-divider");
+
+      const priceSpan = document.createElement("span");
+      priceSpan.textContent = `$${Number(item.price).toFixed(2)}`;
+
+      listItem.append(nameSpan, divider, priceSpan);
+      list.appendChild(listItem);
+    });
+
+    categoryCard.append(title, list);
+    menuContainer.appendChild(categoryCard);
+  });
 };
 
-// Reservation form
+//Reservation form
 const reservationForm = document.querySelector(".reservation__form");
 
 if (reservationForm) {
@@ -84,5 +100,6 @@ if (contactForm) {
   });
 }
 
-//Init
+// Init
+
 loadMenu();
