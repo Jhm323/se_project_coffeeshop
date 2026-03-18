@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Coffee Shop Landing Page" />
-    <meta name="keywords" content="Coffee, HTML, CSS" />
+    <meta name="keywords" content="Coffee, Cafe, HTML, CSS" />
     <meta name="author" content="J. Holden Moore" />
     <link href="./pages/index.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +35,7 @@
         </nav>
 
         <h1 class="header__title">
-          <span class="header__span-accent">Specialty Coffee</span> in the
+          <span class="header__span-accent">Speciality Coffee</span> in the
           Triple Peaks Library
         </h1>
         <p class="header__description">
@@ -47,19 +47,10 @@
           class="header__image"
           alt="coffee shop interior"
         />
-        <div class="header__footer">
-          <div>
-            <p class="header__paragraph">Hours</p>
-            <p class="header__paragraph">Monday - Friday (10:00 - 19:00)</p>
-            <p class="header__paragraph">Saturday - Sunday (11:00 - 18:00)</p>
-          </div>
-          <p class="header__paragraph">
-            200 Success Avenue, The Town of Triple Peaks
-          </p>
-        </div>
       </header>
 
       <main class="content">
+        <!-- Recipes Section -->
         <section class="recipes" id="recipes">
           <h2 class="recipes__title">Recipes</h2>
           <p class="recipes__subtitle">
@@ -83,9 +74,7 @@
                 "
                 allowfullscreen
               ></iframe>
-              <p class="recipes__video-caption">
-                <span>Aeropress Recipe</span> ~5min
-              </p>
+              <p class="recipes__video-caption"><span>Aeropress</span> ~5min</p>
             </li>
             <li>
               <iframe
@@ -104,23 +93,22 @@
                 allowfullscreen
               ></iframe>
               <p class="recipes__video-caption">
-                <span>French Press Recipe</span> ~15min
+                <span>French Press</span> ~15min
               </p>
             </li>
           </ul>
         </section>
 
+        <!-- Reservations Section -->
         <section class="reservation" id="reservations">
           <h2 class="reservation__title">Book a Table</h2>
-          <form class="reservation__form" id="reservation-form">
+          <form class="reservation__form">
             <fieldset class="reservation__fieldset">
               <label for="name" class="reservation__label">Name*</label>
               <input
                 type="text"
-                class="reservation__input"
                 id="name"
-                name="name"
-                placeholder="Name Surname"
+                class="reservation__input"
                 required
               />
 
@@ -129,10 +117,8 @@
               >
               <input
                 type="number"
-                class="reservation__input"
                 id="number-of-guests"
-                name="guests"
-                placeholder="1-8"
+                class="reservation__input"
                 required
               />
 
@@ -141,137 +127,61 @@
               >
               <input
                 type="datetime-local"
-                class="reservation__input"
                 id="date-time"
-                name="date_time"
+                class="reservation__input"
                 required
               />
 
-              <label for="email" class="reservation__label">Your email*</label>
+              <label for="email" class="reservation__label">Email*</label>
               <input
                 type="email"
-                class="reservation__input"
                 id="email"
-                name="email"
-                placeholder="email@email.com"
+                class="reservation__input"
                 required
               />
 
               <label for="terms-of-use" class="reservation__checkbox">
-                <input
-                  type="checkbox"
-                  id="terms-of-use"
-                  name="terms"
-                  required
-                />
+                <input type="checkbox" id="terms-of-use" required />
                 I agree with the terms of use
               </label>
 
               <button type="submit" class="reservation__button">
-                Book a table
+                Book a Table
               </button>
             </fieldset>
           </form>
         </section>
 
+        <!-- Menu Section -->
         <section class="menu" id="menu">
           <h2 class="menu__title">Menu</h2>
           <p class="menu__subtitle">
-            We brew coffee from locally roasted, Fairtrade certified beans and
-            use biodegradable cups. All teas from our collection are $2/cup.
+            Our freshly brewed coffee and tasty treats. Prices shown are per
+            cup/item.
           </p>
-
-          <!-- dynamic menu container -->
-          <ul class="menu__cards" id="menu-container"></ul>
+          <ul id="menu-container" class="menu__cards"></ul>
         </section>
 
-        <section class="contact" id="contact">
+        <!-- Contact Section -->
+        <section class="contact" id="about">
           <h2 class="contact__title">Contact Us</h2>
-          <form class="contact__form" id="contact-form">
-            <fieldset class="contact__fieldset">
-              <label for="contact-name">Name*</label>
-              <input
-                type="text"
-                id="contact-name"
-                name="name"
-                placeholder="Your name"
-                required
-              />
-              <label for="contact-email">Email*</label>
-              <input
-                type="email"
-                id="contact-email"
-                name="email"
-                placeholder="Your email"
-                required
-              />
-              <label for="contact-message">Message*</label>
-              <textarea
-                id="contact-message"
-                name="message"
-                placeholder="Your message"
-                required
-              ></textarea>
-              <button type="submit" class="contact__button">
-                Send Message
-              </button>
-            </fieldset>
-          </form>
-        </section>
+          <form class="contact__form">
+            <label for="contact-name">Name*</label>
+            <input type="text" id="contact-name" required />
 
-        <section class="about" id="about">
-          <h2 class="about__title">About the Coffee Shop</h2>
-          <div class="about__content">
-            <p class="about__paragraph">
-              Our coffee shop is located in the Triple Peaks Library. It
-              features 6 tables and free WiFi.
-            </p>
-            <p class="about__paragraph">
-              Our main mission is keeping guests cozy and energized.
-            </p>
-            <p class="about__paragraph">
-              We try to reduce our environmental impact — no single-use cups.
-            </p>
-          </div>
-          <div class="about__circle about__circle_animation_blurred"></div>
-          <div class="about__circle"></div>
+            <label for="contact-email">Email*</label>
+            <input type="email" id="contact-email" required />
+
+            <label for="contact-message">Message*</label>
+            <textarea id="contact-message" rows="4" required></textarea>
+
+            <button type="submit" class="contact__button">Send Message</button>
+          </form>
         </section>
       </main>
 
       <footer class="footer">
-        <div class="footer__columns">
-          <img
-            src="./images/logo_coffeeshop_light.svg"
-            alt="coffee shop logo"
-            class="footer__logo"
-          />
-          <div class="footer__social">
-            <h3 class="footer__column-heading">Social Media</h3>
-            <ul class="footer__list">
-              <li class="footer__list-item">
-                <a href="#" class="footer__column-link">
-                  <img
-                    src="./images/facebook_white.svg"
-                    alt="facebook icon"
-                    class="footer__social-icon"
-                  />
-                  Facebook
-                </a>
-              </li>
-              <li class="footer__list-item">
-                <a href="#" class="footer__column-link">
-                  <img
-                    src="./images/instagram_white.svg"
-                    alt="instagram icon"
-                    class="footer__social-icon"
-                  />
-                  Instagram
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <p class="footer__copyright">&copy;2024 J. Holden Moore</p>
+        <p class="footer__copyright">&copy; 2026 J. Holden Moore</p>
       </footer>
     </div>
 
