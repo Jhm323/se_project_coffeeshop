@@ -46,3 +46,31 @@ One thing I focused on here was keeping the backend structure clean so it would 
 ---
 
 ## Example API routes
+
+GET /menu
+POST /reservations
+POST /contact
+
+
+---
+
+## Running locally
+
+### Backend
+
+```bash
+cd server
+npm install
+cp .env.example .env
+createdb coffee_shop
+psql -d coffee_shop -f schema.sql
+psql -d coffee_shop -f seed_menu.sql
+npm run dev
+
+API runs on http://localhost:5000
+
+Frontend
+
+Open index.html or run:
+
+npx serve .
