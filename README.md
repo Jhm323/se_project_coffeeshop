@@ -8,7 +8,7 @@ This started as a static landing page and I extended it into a working system wh
 
 ## Live preview
 
-[Add demo link here if deployed]
+[Demo link on the way]
 
 ---
 
